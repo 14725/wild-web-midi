@@ -69,7 +69,7 @@ var emptyBuffer;
 var audioIsInitted = false;
 
 function initAudio() {
-    audioCtx = new window.AudioContext();
+    audioCtx = new window.AudioContext({sampleRate: 44100});
     scriptNode = audioCtx.createScriptProcessor(BUFFER, 0, channels);
     scriptNode.onaudioprocess = onAudioProcess;
 
